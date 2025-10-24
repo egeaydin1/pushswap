@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
+/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/17 22:01:53 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/09/30 17:10:25 by hientranpc       ###   ########.fr       */
+/*   Created: 2025/06/13 17:35:37 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/10/24 18:35:57 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(int))
+t_list	*ft_lstnew(int value)
 {
-	del(lst->content);
-	free (lst);
+	t_list	*node;
+
+	node = (t_list *)malloc(sizeof(*node));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->next = NULL;
+	return (node);
 }

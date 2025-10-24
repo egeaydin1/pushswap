@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
+/*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/18 17:16:55 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/09/30 17:13:00 by hientranpc       ###   ########.fr       */
+/*   Created: 2025/05/30 14:12:26 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/10/24 14:53:06 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(int))
+char	*ft_strrchr(const char *s, int c)
 {
-	t_list	*tmp;
+	int	i;
 
-	tmp = lst;
-	while (tmp)
+	i = ft_strlen(s);
+	if ((unsigned char)c == '\0')
+		return ((char *)(s + i));
+	while (i >= 0)
 	{
-		f(tmp->content);
-		tmp = tmp->next;
+		if (s[i] == (unsigned char)c)
+			return ((char *)(s + i));
+		i--;
 	}
+	return (NULL);
 }

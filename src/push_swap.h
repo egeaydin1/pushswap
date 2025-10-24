@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 14:12:26 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/06/20 16:16:41 by egeaydin         ###   ########.fr       */
+/*   Created: 2025/09/29 18:14:26 by egeaydin          #+#    #+#             */
+/*   Updated: 2025/10/24 19:02:31 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+#include "../lib/libft/libft.h"
+#include "../lib/ft_printf/ft_printf.h"
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	i;
-
-	i = ft_strlen(s);
-	if ((unsigned char)c == '\0')
-		return ((char *)(s + i));
-	while (i >= 0)
-	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)(s + i));
-		i--;
-	}
-	return (NULL);
-}
+void	parser_main(t_list **a, int ac, char **av);
+int		ft_free(t_list **head);
+void	ft_error_exit(char *msg);
+int		not_sorted(t_list *a);
+// asaası silinecekk !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+void	print_stack(t_list **head);
+#endif
