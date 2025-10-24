@@ -6,7 +6,7 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:03:52 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 18:36:25 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/24 21:12:08 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void				ft_putstr_fd(char *s, int fd);
 
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
-void				ft_lstclear(t_list *lst);
+void				ft_lstclear(t_list **lst);
 void				ft_lstdelone(t_list *node);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstnew(int content);
+t_list				*ft_lstnew(int value);
 
 #endif

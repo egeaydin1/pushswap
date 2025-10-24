@@ -6,18 +6,11 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:52 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 18:51:51 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/24 21:16:47 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_valid_char(char c)
-{
-	if (c == ' ' || c == '+' || c == '-' || (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
 
 void	is_valid_arguments(char **av, int ac)
 {
@@ -30,7 +23,8 @@ void	is_valid_arguments(char **av, int ac)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!is_valid_char(av[i][j]))
+			if (!(av[i][j] == ' ' || av[i][j] == '+' || av[i][j] == '-'
+				|| (av[i][j] >= '0' && av[i][j] <= '9')))
 				ft_error_exit("Error");
 			j++;
 		}
@@ -40,31 +34,29 @@ void	is_valid_arguments(char **av, int ac)
 
 void	split_and_parse(char **av, t_list **a, int ac)
 {
-	char	**ar_splited;
 	t_list	*new_node;
 	int		i;
-	int		j;
+	char	**args_splited;
 
-	i = 1;
-	while (i < ac)
+	i = 0;
+	if (ac > 2)
+		args_splited = av + 1;
+	else
+		args_splited = ft_split(av[1], ' ');
+	while (args_splited[i])
 	{
-		j = 0;
-		ar_splited = ft_split(av[i], 32);
-		while (ar_splited[j] != NULL)
+		new_node = ft_lstnew(ft_atoi(args_splited[i]));
+		if (!new_node)
 		{
-			new_node = ft_lstnew(ft_atoi(ar_splited[j]));
-			if (!new_node)
-			{
-				ft_free(a);
-				return ;
-			}
-			ft_lstadd_back(a, new_node);
-			free(ar_splited[j]);
-			j++;
+			ft_lstclear(a);
+			return ;
 		}
-		free(ar_splited);
+		ft_lstadd_back(a, new_node);
+		ft_lstdelone(new_node);
 		i++;
 	}
+	if (ac == 2)
+		ft_free_split(args_splited);
 }
 
 void	has_duplicates(t_list *a)
@@ -80,7 +72,7 @@ void	has_duplicates(t_list *a)
 		{
 			if (i->value == j->value)
 			{
-				ft_lstclear(a);
+				ft_lstclear(&a);
 				ft_error_exit("Error");
 			}
 			i = i->next;

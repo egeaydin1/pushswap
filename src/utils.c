@@ -6,23 +6,25 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:48:23 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 19:17:15 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/24 21:17:12 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_free(t_list **head)
+void	ft_free_split(char **arr)
 {
-	t_list	*tmp;
+	int	i;
 
-	while (*head)
+	if (!arr)
+		return ;
+	i = 0;
+	while (arr[i])
 	{
-		tmp = (*head)->next;
-		free(*head);
-		*head = tmp;
+		free(arr[i]);
+		i++;
 	}
-	return (0);
+	free(arr);
 }
 
 void	ft_error_exit(char *msg)
