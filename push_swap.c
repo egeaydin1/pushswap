@@ -6,15 +6,15 @@
 /*   By: hientranpc <hientranpc@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:55 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/05 18:15:05 by hientranpc       ###   ########.fr       */
+/*   Updated: 2025/10/19 16:49:25 by hientranpc       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int error(void)
+void error(void)
 {
 	ft_printf("Error\n");
-	return (0);
+	exit(1);
 }
 
 int	main(int ac, char **av)
@@ -25,5 +25,5 @@ int	main(int ac, char **av)
 	a = NULL;
 	//b = NULL;
 	if (!parser_main(&a, ac, av))
-		return (error());
+		error();
 }
