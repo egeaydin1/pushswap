@@ -6,7 +6,7 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:55 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/25 03:02:01 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/25 11:46:57 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,17 @@ int	main(int ac, char **av)
 	if (not_sorted(a))
 	{
 		//get_index();
-		//sort();
 		ft_printf("sirali degil\n");
-		return (1);
+		sort(&a);
+		if (!not_sorted(a))
+	{
+		print_stack(&a);
+		ft_printf("siralandi\n");
 	}
-	ft_printf("sirali\n");
+	}
+	else
+		ft_printf("zaten sirali\n");
+	
 	ft_lstclear(&a);
 	return (1);
 }

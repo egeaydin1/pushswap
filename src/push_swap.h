@@ -6,7 +6,7 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:14:26 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 21:25:22 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/25 11:19:31 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ void	parser_main(t_list **a, int ac, char **av);
 void	ft_free_split(char **arr);
 void	ft_error_exit(char *msg);
 int		not_sorted(t_list *a);
+void    sort(t_list **a);
+
+void	sa(t_list **a);
+void	rotate(t_list **a, char *opname);
+void	push(t_list **target_stack, t_list **source_stack, char *opname);
 // asaası silinecekk !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 void	print_stack(t_list **head);
 
