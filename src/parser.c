@@ -6,7 +6,7 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:52 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 21:16:47 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/25 02:53:17 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	split_and_parse(char **av, t_list **a, int ac)
 			return ;
 		}
 		ft_lstadd_back(a, new_node);
-		ft_lstdelone(new_node);
 		i++;
 	}
 	if (ac == 2)

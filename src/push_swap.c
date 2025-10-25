@@ -6,7 +6,7 @@
 /*   By: egeaydin <egeaydin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:55 by egeaydin          #+#    #+#             */
-/*   Updated: 2025/10/24 21:17:36 by egeaydin         ###   ########.fr       */
+/*   Updated: 2025/10/25 03:02:01 by egeaydin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	ft_printf("sirali\n");
+	ft_lstclear(&a);
 	return (1);
 }
